@@ -1,0 +1,45 @@
+@startuml
+
+entity User {
+  +user_id : INT
+  name : VARCHAR
+  email : VARCHAR
+  phone : VARCHAR
+  created_at : DATE
+}
+
+entity Property {
+  +property_id : INT
+  host_id : INT
+  title : VARCHAR
+  description : TEXT
+  city : VARCHAR
+  address : VARCHAR
+  price_per_night : DECIMAL
+  max_guests : INT
+}
+
+entity Booking {
+  +booking_id : INT
+  property_id : INT
+  guest_id : INT
+  check_in : DATE
+  check_out : DATE
+  total_price : DECIMAL
+  status : VARCHAR
+}
+
+entity Review {
+  +review_id : INT
+  booking_id : INT
+  rating : INT
+  comment : TEXT
+  created_at : DATE
+}
+
+User ||--o{ Property : owns
+User ||--o{ Booking : makes
+Property ||--o{ Booking : has
+Booking ||--o| Review : receives
+
+@enduml

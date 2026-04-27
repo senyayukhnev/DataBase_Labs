@@ -1,0 +1,21 @@
+# Claude local config
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Virtual environments inside lab6
+airbnb-db-lab/lab6/.venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Temp/generated files
+airbnb-db-lab/lab4_unpacked/
+airbnb-db-lab/gen_lab4.js
